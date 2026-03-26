@@ -6,6 +6,7 @@ public final class ElytraPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        getServer().getPluginManager().registerEvents(new DragonDeathListener(this), this);
         // Plugin startup logic
         if (getDescription() != null) {
             getLogger().info(getDescription().getName() + " v" + getDescription().getVersion() + " enabled");
