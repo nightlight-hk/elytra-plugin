@@ -19,3 +19,5 @@ A plugin for paper / folia minecraft server to adjust the elytra obtaining
   - A: No, this plugin is designed for paper / folia servers and may not work on other server types
 - Q: How to set the default drop rate of elytra?
   - A: Clone this repo, set the desired default drop rate as the value of elytraDropRate in Line 22 of DragonDeathListener.java, and then re-build the plugin as mentioned above. Make sure to restart the server after replacing the plugin jar file to apply the changes.
+- Q: Why don't you use a config file to set the default drop rate of elytra?
+  - A: I want to keep the plugin simple and lightweight, and I think it's not necessary to use a config file for just one setting. However, if there are enough requests for this feature, I may consider adding it in the future.
