@@ -7,11 +7,13 @@ import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.boss.DragonBattle;
 import org.bukkit.entity.EnderDragon;
+import org.bukkit.entity.Item;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.util.Vector;
 
 public final class DragonDeathListener implements Listener {
 
@@ -59,10 +61,11 @@ public final class DragonDeathListener implements Listener {
             return;
         }
 
-        Location dropLocation = dragonBattle.getEndPortalLocation().clone().add(0.0D, 5.0D, 0.0D);
+        Location dropLocation = dragonBattle.getEndPortalLocation().clone().add(0.5D, 6.0D, 0.5D);
         plugin.getLogger().info("Spawning ELYTRA at " + world.getName() + " ["
                 + dropLocation.getBlockX() + ", " + dropLocation.getBlockY() + ", " + dropLocation.getBlockZ() + "]");
-        world.dropItem(dropLocation, new ItemStack(Material.ELYTRA));
+        Item droppedItem = world.dropItem(dropLocation, new ItemStack(Material.ELYTRA));
+        droppedItem.setVelocity(new Vector(0.0D, 0.0D, 0.0D));
     }
 }
 
