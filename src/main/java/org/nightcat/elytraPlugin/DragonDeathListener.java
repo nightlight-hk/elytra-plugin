@@ -18,6 +18,7 @@ import org.bukkit.util.Vector;
 public final class DragonDeathListener implements Listener {
 
     private final JavaPlugin plugin;
+    // default drop rate everytime when restart
     private double elytraDropRate = 0.25D;
 
     public DragonDeathListener(JavaPlugin plugin) {
